@@ -13,7 +13,7 @@ describe('Testowanie contact us webdriveruniversity', () => {
             console.log('przerwa na kod');            
         });
         
-        cy.get('textarea.feedback-input').type("lorem ipsum lorem");
+        cy.get('textarea.feedback-input').type("lorem ipsum lorem ipsum");
         cy.get('[type="submit"]').click();
         cy.get('#contact_reply').find('h1').should('have.text', 'Thank You for your Message!');
         cy.get('#contact_reply').find('h1').should(($h1) => {
