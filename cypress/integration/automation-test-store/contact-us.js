@@ -3,7 +3,9 @@
 describe('Contact Us form at Automation Test Store', () => {
     it('Poprawne wypełnienie pól i wysłanie danych', () => {
         cy.visit('https://automationteststore.com/'); 
-        cy.get('a[href$="contact"]').click();
+        cy.get('a[href$="contact"]').click().then(link => {
+            cy.log("Tekst linka: " + link.text());
+        });
         // cy.xpath("//a[contains(@href, 'contact')]").click();
         cy.get('#ContactUsFrm_first_name').type('Michał');
         cy.get('#ContactUsFrm_email').type('aaa@bbb.pl');

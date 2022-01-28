@@ -9,11 +9,12 @@ describe('Testowanie contact us webdriveruniversity', () => {
         cy.get('[name="first_name"]').type("WKS");
         cy.get('[name="last_name"]').type("Śląsk");
         
-        cy.get('[name="email"]').type("aaa@bbb.pl").then(() => {            
-            console.log('przerwa na kod');            
+        cy.get('[name="email"]').type("aaa@bbb.pl").then((odp) => {            
+            console.log('przerwa na kod ');
+            console.log(odp);
         });
         
-        cy.get('textarea.feedback-input').type("lorem ipsum lorem ipsum");
+        cy.get('textarea.feedback-input').type("lorem ipsum");
         cy.get('[type="submit"]').click();
         cy.get('#contact_reply').find('h1').should('have.text', 'Thank You for your Message!');
         cy.get('#contact_reply').find('h1').should(($h1) => {
