@@ -23,3 +23,7 @@ import './commands'
 Cypress.Server.defaults({
     ignore: (xhr) => bool
 });
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    return false;
+});

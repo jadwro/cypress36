@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 describe('Testowanie contact us webdriveruniversity', () => {
-    it.only('Poprawne wypełnienie pól i wysłanie danych', () => {
+    it('Poprawne wypełnienie pól i wysłanie danych', () => {
         cy.visit('https://webdriveruniversity.com/Contact-Us/contactus.html');
         cy.document().should('have.property', 'charset').and('eq', 'UTF-8');
         cy.title().should('include', 'WebDriver | Contact Us');
@@ -32,5 +32,24 @@ describe('Testowanie contact us webdriveruniversity', () => {
         cy.get('[type="submit"]').click();
         cy.get('body').contains('Error: all fields are required');
         cy.get('body').contains('Error: Invalid email address');
+    });
+    
+    it.only('Działa otwieranie nowego okna?', () => {
+        cy.visit('https://webdriveruniversity.com');
+        cy.get('.col-sm-12.col-lg-12.col-md-12').find('a').eq(0).invoke('removeAttr', 'target');
+        cy.get('.thumbnail .section-title')
+            .eq(0)
+            .parents('a')
+            .should('have.attr', 'href', 'Contact-Us/contactus.html')
+            // .contains('h1', 'CONTACT US')
+            .should('contain.text', 'CONTACT US')
+            .click();
+
+        cy.get('[name="first_name"]').type("WKS");
+        cy.get('[name="last_name"]').type("Śląsk");        
+        cy.get('textarea.feedback-input').type("Cała Polska w cieniu Śląska");
+        cy.get('[type="submit"]').click();
+        cy.get('body').contains('Error: all fields are required');
+        cy.get('body').should('contain.text', 'Error: Invalid email address');
     });
 });
