@@ -19,8 +19,24 @@
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
+
+Cypress.Commands.add("selectProduct", productName => {
+    cy.get('.fixed_wrapper .prdocutname').each(($el, index, $list) => {
+        if($el.text().includes(productName)) {
+            cy.wrap($el).click();
+        }
+    }); 
+});
+
+Cypress.Commands.add("webDriveContact", (firstName, lastName, email, comment, $selector, text) => {
+    cy.get('[name="first_name"]').type(firstName);
+    cy.get('[name="last_name"]').type(lastName);
+    cy.get('[name="email"]').type(email);        
+    cy.get('textarea.feedback-input').type(comment, {force:true});
+    cy.get('[type="submit"]').click();
+    cy.get($selector).contains(text);
+});
+
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
