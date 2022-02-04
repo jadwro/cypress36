@@ -1,1 +1,4 @@
-{}
+{
+    "defaultCommandTimeout": 5000,
+    "ignoreTestFiles": "**/other/*"
+}
