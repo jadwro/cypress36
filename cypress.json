@@ -1,4 +1,9 @@
 {
+    "baseUrl": "https://webdriveruniversity.com",
     "defaultCommandTimeout": 5000,
-    "ignoreTestFiles": "**/other/*"
+    "ignoreTestFiles": "**/other/*",
+    "env": {
+        "webDriveUrl": "https://webdriveruniversity.com",
+        "firstName": "Mike"
+    }
 }

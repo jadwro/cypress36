@@ -2,6 +2,6 @@
   "name": "Using fixtures to represent data",
   "email": "testowy@mail.pl",
   "body": "Fixtures are a great way to mock data for responses to routes",
-  "first": "Michał",
-  "second": "Michalski"
+  "firstName": "Michał",
+  "secondName": "Michalski"
 }
