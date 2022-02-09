@@ -1,9 +1,14 @@
+import HomePage from '../../support/pageObject/webdriver/Homepage';
+
 /// <reference types="Cypress" />
 
 describe('Weryfikacja checkboxów', () => {
     beforeEach(() => {
-        cy.visit(Cypress.env("webDriveUrl"));
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({ force:true });
+        // cy.visit(Cypress.env("webDriveUrl"));
+        // cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({ force:true });
+        const homepage = new HomePage();
+        homepage.visitHomepage();
+        homepage.visitCheckboxesPage();
     });
 
     it('Zaznacz i sprawdź checkbox', () => {

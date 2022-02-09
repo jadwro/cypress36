@@ -1,6 +1,12 @@
+import HomePage from '../../support/pageObject/webdriver/Homepage';
+import ContactUs from '../../support/pageObject/webdriver/Contact';
+
 /// <reference types="Cypress" />
 
 describe('Testowanie contact us webdriveruniversity', () => {
+    const contactUs = new ContactUs();
+    const homepage = new HomePage();
+
     before(() => {
         cy.fixture('example').then((data) => {
             globalThis.data = data;
@@ -8,7 +14,8 @@ describe('Testowanie contact us webdriveruniversity', () => {
     });
 
     it.only('Poprawne wypełnienie pól i wysłanie danych', () => {
-        cy.visit('/Contact-Us/contactus.html');
+        homepage.visitHomepage();
+        homepage.visitContactPage();
         cy.document().should('have.property', 'charset').and('eq', 'UTF-8');
         cy.title().should('include', 'WebDriver | Contact Us');
         cy.url().should('contain', 'Contact-Us');
@@ -24,7 +31,9 @@ describe('Testowanie contact us webdriveruniversity', () => {
         // });
         // cy.get('#contact_reply').contains('h1', 'Thank You for your message!', { matchCase: false }).should('exist');
 
-        cy.webDriveContact(Cypress.env("firstName"), data.secondName, data.email, "lorem ipsum", "h1", "Thank You for your Message!");
+        // cy.webDriveContact(Cypress.env("firstName"), data.secondName, data.email, "lorem ipsum", "h1", "Thank You for your Message!");
+
+        contactUs.contactFormSubmit(Cypress.env("firstName"), data.secondName, data.email, "lorem ipsum", "h1", "Thank You for your Message!");
     });
 
     it('Niepoprawna ścieżka, nie wszystkie pola są wypełnione', () => {

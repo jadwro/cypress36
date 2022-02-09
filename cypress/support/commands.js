@@ -31,7 +31,6 @@ Cypress.Commands.add("selectProduct", productName => {
 Cypress.Commands.add("addProduct", productName => {
     cy.get('.fixed_wrapper .prdocutname').each(($el, index) => {
         if($el.text() === productName) {
-            cy.log($el.text());
             cy.get('.productcart').eq(index).click({force:true});
         }
     }); 
