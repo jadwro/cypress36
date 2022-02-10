@@ -17,7 +17,7 @@ describe('Alias i invoke', () => {
         cy.get('@product').find('.productcart').eq(0).invoke('attr', 'title').should('eq', 'Add to Cart');
     });
 
-    it.only('Obliczenie wartości produktów przecenionych i zwykłych', () => {
+    it('Obliczenie wartości produktów przecenionych i zwykłych', () => {
         cy.visit('https://automationteststore.com/');
         cy.get('.thumbnail').as('product');
         // cy.get('@product').find('.price').each(el => {

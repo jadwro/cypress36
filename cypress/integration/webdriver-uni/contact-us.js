@@ -13,7 +13,7 @@ describe('Testowanie contact us webdriveruniversity', () => {
         });
     });
 
-    it.only('Poprawne wypełnienie pól i wysłanie danych', () => {
+    it('Poprawne wypełnienie pól i wysłanie danych', () => {
         homepage.visitHomepage();
         homepage.visitContactPage();
         cy.document().should('have.property', 'charset').and('eq', 'UTF-8');

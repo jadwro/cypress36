@@ -1,9 +1,16 @@
 {
     "baseUrl": "https://webdriveruniversity.com",
     "defaultCommandTimeout": 5000,
-    "ignoreTestFiles": "**/other/*",
+    "video": false,
+    "ignoreTestFiles": [
+        "**/other/*"
+    ],
     "env": {
         "webDriveUrl": "https://webdriveruniversity.com",
         "firstName": "Mike"
+    },
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+      "configFile": "reporter-config.json"
     }
 }

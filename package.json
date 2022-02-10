@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cyopen": "cypress open"
+    "cyopen": "cypress open",
+    "cyrun": "cypress run",
+    "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
+    "junit-delete": "rm -rf cypress/results/junit/*.xml",
+    "mocha-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome-merged.json && npx marge mochawesome-merged.json",
+    "mocha-delete": "rm -rf cypress/results/mochawesome/*.json",
+    "delete-all": "npm run junit-delete && npm run mocha-delete"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +18,13 @@
   "devDependencies": {
     "cypress": "^9.4.1",
     "cypress-file-upload": "^5.0.8",
-    "cypress-xpath": "^1.6.2"
+    "cypress-multi-reporters": "^1.5.0",
+    "cypress-xpath": "^1.6.2",
+    "mocha": "^5.2.0",
+    "mocha-junit-reporter": "^2.0.2",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.0.1",
+    "reporter": "^0.1.0"
   }
 }

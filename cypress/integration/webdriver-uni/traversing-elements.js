@@ -67,7 +67,7 @@ describe("Traversing DOM elements in Cypress", () => {
         cy.get('#veggie').prevUntil('#fruits').should('have.length', 5);
     });
 
-    it.only("siblings() To get all sibling DOM elements of elements", () => {
+    it("siblings() To get all sibling DOM elements of elements", () => {
         cy.get('.btn.btn-primary.active').siblings().should('have.length', 3);
     });
 });

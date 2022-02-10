@@ -23,7 +23,7 @@ describe('Iteracje', () => {
         cy.selectProduct('Eau Parfumee au The Vert Shampoo');
     });
 
-    it.only('Dodawanie produktu do koszyka', () => {        
+    it('Dodawanie produktu do koszyka', () => {        
         cy.selectProduct('Seaweed Conditioner');
     });
 });

@@ -36,7 +36,7 @@ describe('Alerty JS', () => {
         cy.get('#confirm-alert-text').contains('You pressed Cancel!');
     });
 
-    it.only('Sprawdzenie alertu z wyborem - ze stub()', () => {
+    it('Sprawdzenie alertu z wyborem - ze stub()', () => {
         cy.visit('https://webdriveruniversity.com');
         cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force:true });
         

@@ -24,7 +24,7 @@ describe('Test mouse action', () => {
         });
     });
 
-    it.only('Trzymanie wciśniętego LPM nad elementem', () => {
+    it('Trzymanie wciśniętego LPM nad elementem', () => {
         cy.visit('https://webdriveruniversity.com');
         cy.get('#actions').scrollIntoView().invoke('removeAttr', 'target').click({ force:true });
         
