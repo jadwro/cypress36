@@ -45,7 +45,7 @@ describe('Testowanie contact us webdriveruniversity', () => {
         // cy.get('body').contains('Error: all fields are required');
         // cy.get('body').contains('Error: Invalid email address');
 
-        cy.webDriveContact(data.first, data.second, "", "lorem ipsum", "body", "Error: Invalid email address");
+        cy.webDriveContact(data.firstName, data.secondName, " ", "lorem ipsum", "body", "Error: Invalid email address");
     });
     
     it('Działa otwieranie nowego okna?', () => {
