@@ -6,6 +6,7 @@
   "scripts": {
     "cyopen": "cypress open",
     "cyrun": "cypress run",
+    "cysingle": "cypress run --spec ./cypress/integration/webdriver-uni/checkboxes.js",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "junit-delete": "rm -rf cypress/results/junit/*.xml",
     "mocha-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome-merged.json && npx marge mochawesome-merged.json",
