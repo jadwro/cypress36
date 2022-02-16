@@ -10,7 +10,7 @@ describe("Flow komentarzy", () => {
                 accept: "application/json"
             }
         }).then((res) => {
-            expect(res.status).to.eql(200);            
+            expect(res.status).to.eql(200);
         });
     });
 
