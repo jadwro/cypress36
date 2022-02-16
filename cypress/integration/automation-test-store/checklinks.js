@@ -12,7 +12,7 @@ describe('Dodawanie kilku elementów do koszyka', () => {
     // });
 
     it('klik link', () => {
-        cy.visit('https://www.jadwro.xce.pl')
+        cy.visit('https://www.jadwro.pl')
         cy.get('a:visible').filter('[href]').each((link) => {
             cy.request(link.prop('href')).its('status').should('eq', 200)
         });
