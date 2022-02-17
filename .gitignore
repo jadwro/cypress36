@@ -2,3 +2,4 @@ node_modules
 cypress/results
 cypress/screenshots
 json-server
+angular-realworld-example-app

@@ -39,7 +39,7 @@ describe("Network request", () => {
         });
     });
 
-    it.only('Put request', () => {
+    it('Put request', () => {
         cy.intercept({
             method: "PUT",
             url: "**/comments/*"
