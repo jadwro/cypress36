@@ -1,0 +1,20 @@
+{
+    "articles": [
+        {
+            "title": "Mokowany artykuł",
+            "description": "Mokowana treść artykułu",
+            "body": "A to nie wiem gdzie",
+            "tagList": [
+                "WKS",
+                "Śląsk"
+            ],
+            "author": {
+                "username": "Jadwro",
+                "image": "https://api.realworld.io/images/demo-avatar.png",
+                "following": false
+            },
+            "favoritesCount": 9999999,
+            "favorited": false
+        }
+    ]
+}

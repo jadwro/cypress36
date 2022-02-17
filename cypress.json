@@ -3,7 +3,9 @@
     "defaultCommandTimeout": 5000,
     "video": false,
     "ignoreTestFiles": [
-        "**/other/*"
+        "**/other/*",
+        "**/automation-test-store/*",
+        "**/webdriver-uni/*"
     ],
     "env": {
         "webDriveUrl": "https://webdriveruniversity.com",

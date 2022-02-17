@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run cyopen",
     "cyopen": "cypress open",
     "cyrun": "cypress run",
     "cysingle": "cypress run --spec ./cypress/integration/webdriver-uni/checkboxes.js",
