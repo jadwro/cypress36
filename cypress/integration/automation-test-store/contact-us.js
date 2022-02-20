@@ -20,4 +20,11 @@ describe('Contact Us form at Automation Test Store', () => {
         cy.get('button[title="Submit"]').click();
         cy.get('.mb40 > :nth-child(3)').should('have.text', 'Your enquiry has been successfully sent to the store owner!');
     });
+
+    it("check contains", () => {
+        cy.visit('https://automationteststore.com/'); 
+        cy.get('.footersocial h2').contains('Us');
+        cy.get('.footersocial').should('contain.text', 'Us');
+        cy.get('.footersocial h2:contains("Us")');
+    })
 });
